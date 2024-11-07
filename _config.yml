@@ -1,36 +1,5 @@
-title: Max Fleming
-subtitle: by HTML5 UP
-email: max@theflemings.com
-description: A website compiling projects ive done over the years
-baseurl: "/maxFleming05github" # the subpath of your site, e.g. /blog
-url: maxFleming05.github.io # the base hostname & protocol for your site
-author: Max Fleming
-country: United States of America
-
-# homepage tiles
-tiles-source: pages # accepts "posts" or "pages"
-tiles-count: 6
-
-# social settings (key must match name of font awesome icon)
-# see https://fontawesome.com/icons?d=gallery&p=2&s=brands
-# Icons are not shown if value is empty
-# You need to restart jekyll for changes to have an effect
-socials:
-  GitHub: https://github.com/maxFleming05
-  Instagram:
-  LinkedIn: https://www.linkedin.com/in/max-fleming-a50b65255/
-  Twitter: 
-  Facebook:
-  Slack:
-
-# build settings
-markdown: kramdown
-
-sass:
-  style: compressed
-
-exclude:
-- "*.gemspec"
-- LICENSE.md
-- CONTRIBUTING.md
-- README.md 
+title: Midnight theme
+description: Midnight is a theme for GitHub Pages.
+show_downloads: true
+google_analytics:
+theme: jekyll-theme-midnight

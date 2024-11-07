@@ -4,6 +4,6 @@ layout: default
 
 oh boy
 
-#Project Portfolio
+# Project Portfolio
 
-##Google Location Data
+## Google Location Data

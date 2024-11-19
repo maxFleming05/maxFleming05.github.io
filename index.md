@@ -27,4 +27,4 @@ Currently enrolled in college at Whitman, planning on studying Computer Science 
 leaving it without the link as it isnt working right now: 
 {% include_relative roadTripBox.html %}
 
-{% include_relative sketch.js %}
+

@@ -27,6 +27,6 @@ Currently enrolled in college at Whitman, planning on studying Computer Science 
 {% include_relative roadTripBox.html %}
 
 # Star Wars P5JS Project
-{% include_relative StarWars/index.html %}
+{% include_relative displayP5JS.html %}
 
 

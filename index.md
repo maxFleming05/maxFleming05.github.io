@@ -1,7 +1,4 @@
----
-layout: default
----
-
+This is to check and see if things are infact updating
 # Info
 Currently enrolled in college at Whitman, planning on studying Computer Science with a minor in Data Science. 
 

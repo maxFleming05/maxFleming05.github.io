@@ -22,7 +22,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(950, 900);
+  createCanvas(800, 800);
   imageMode(CENTER);
   
   for (let i = 0; i < numStars; i++) {

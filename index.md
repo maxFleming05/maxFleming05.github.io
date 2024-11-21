@@ -28,7 +28,7 @@ Currently enrolled in college at Whitman, planning on studying Computer Science 
 {% include_relative roadTripBox.html %}
 
 # Star Wars P5JS Project
-**ONCE AGAIN**  Testing if this applied changes since I have edited the file.
+Use mouse and 'h' Key to interact with the program:
 {% include_relative displayP5JS.html %}
 
 

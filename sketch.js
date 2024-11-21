@@ -51,7 +51,7 @@ function draw() {
     stars[i].update();
     stars[i].show();
     
-    if (keyIsPressed) {
+    if (keyIsPressed == 'h') {
         speed = 200;
         lightSpeed = true;
       

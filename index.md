@@ -1,4 +1,4 @@
-This is to check and see if things are infact updating
+
 # Info
 Currently enrolled in college at Whitman, planning on studying Computer Science with a minor in Data Science. 
 
@@ -20,9 +20,14 @@ Currently enrolled in college at Whitman, planning on studying Computer Science 
 - I have always been interesed in sleep data and the effect it has on health. This is due to the fact that I have always noticed that my mood is heavily effected by sleep. I would look into the age vs sleep required, effects of low amounts of sleep, and of course find the optimal amount a person should get on a given night.
 
 
+
+
 ## Google Location Data
 
 {% include_relative roadTripBox.html %}
+
+
+
 
 # Star Wars P5JS Project
 Use mouse and 'h' Key to interact with the program:

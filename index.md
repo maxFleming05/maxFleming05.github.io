@@ -24,8 +24,9 @@ Currently enrolled in college at Whitman, planning on studying Computer Science 
 
 
 ## Google Location Data
-leaving it without the link as it isnt working right now: 
 {% include_relative roadTripBox.html %}
+
+# Star Wars P5JS Project
 {% include_relative StarWars/index.html %}
 
 

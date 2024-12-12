@@ -35,8 +35,8 @@ Click this link to view the webpage showing the analysis:
 
 
 
-# Star Wars P5JS Project
-Use mouse and 'h' Key to interact with the program:
-{% include_relative displayP5JS.html %}
+# P5JS Projects
+
+- [Star Wars Project](https://maxfleming05.github.io/StarWars/)
 
 

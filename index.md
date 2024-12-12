@@ -20,6 +20,12 @@ Currently enrolled in college at Whitman, planning on studying Computer Science 
 - I have always been interesed in sleep data and the effect it has on health. This is due to the fact that I have always noticed that my mood is heavily effected by sleep. I would look into the age vs sleep required, effects of low amounts of sleep, and of course find the optimal amount a person should get on a given night.
 
 
+# Final Project, CS 215
+
+### Fantasy Football Analysis.
+
+Click this link to view the webpage showing the analysis:
+[Fantasy Analysis](https://maxfleming05.github.io/Fantasy-Football-Analysis/)
 
 
 ## Google Location Data

@@ -8,7 +8,7 @@ This website is used to store current projects that I have worked on in or outsi
 -  [Fantasy Football 2017 - 2022 Analysis.](https://maxfleming05.github.io/Fantasy-Football-Analysis/)
 
   This was falling sand sim created for our group final in my Computer Simulation Methods course. It was based off of the way Noita rendered particles, and dove into object oriented programming and optimization.
--  [Falling Sand Simulator](https://maxfleming05.github.io/fallingSandSim/) 
+-  [Falling Sand Simulator](https://github.com/maxFleming05/fallingSandSim/) 
 
 
 

@@ -3,6 +3,7 @@
 Currently enrolled in college at Whitman, planning on studying Computer Science with a minor in Data Science. 
 This website is used to store current projects that I have worked on in or outside of class.
 
+
 # Class Projects
   This was a project for my Data Science class where we used a kaggle dataset, then performed analysis to attempt to find a correlation between statistics that would give us an edge in our upcoming fantasy football league
 -  [Fantasy Football 2017 - 2022 Analysis.](https://maxfleming05.github.io/Fantasy-Football-Analysis/)
@@ -17,4 +18,7 @@ This website is used to store current projects that I have worked on in or outsi
 - [Star Wars Project](https://maxfleming05.github.io/StarWars/)
 
 
+# Riot API Project
+  I was inspired to make this project after I combined my love for some of Riot's games and my passion for Data Analytics. League API is a great intersection where I got to learn the basics of API calls, and then got a simple working prototype for an interactive website to check recent statistics from League of Legends matches.
+- [Riot API Project](https://maxfleming05.github.io/leagueAnalytics)
 

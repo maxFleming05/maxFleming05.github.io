@@ -20,5 +20,5 @@ This website is used to store current projects that I have worked on in or outsi
 
 # Riot API Project
   I was inspired to make this project after I combined my love for some of Riot's games and my passion for Data Analytics. League API is a great intersection where I got to learn the basics of API calls, and then got a simple working prototype for an interactive website to check recent statistics from League of Legends matches.
-- [Riot API Project](https://github.com/maxFleming05/leagueAnalytics)
+- [Riot API Project](https://github.com/maxFleming05/leagueAnalytics/)
 

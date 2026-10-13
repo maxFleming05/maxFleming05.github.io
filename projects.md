@@ -1,3 +1,6 @@
+---
+title: Earlier projects
+---
 
 # Info
 Currently enrolled in college at Whitman, planning on studying Computer Science with a minor in Data Science. 

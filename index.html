@@ -220,6 +220,34 @@
       recommendation: "embedded",
       projects: [
   {
+    "id": "after-hours",
+    "title": "After Hours (working title)",
+    "category": "game-design",
+    "context": "Unity prototype \u00b7 In development",
+    "role": "Game design & Unity development",
+    "description": "I\u2019m developing a Unity game that combines first-person combat with a maze you build yourself. The goal is to make planning and shooting equally necessary: defenses control crowds, while the player handles threats. Its planned toy-diorama setting pits a wooden meeple and chess-piece defenses against invading wind-up toys.",
+    "tags": [
+      "Unity 6",
+      "C#",
+      "Systems design",
+      "Gameplay analytics"
+    ],
+    "question": "How can building the battlefield and fighting inside it both stay essential as a run gets longer?",
+    "contribution": [
+      "Designed a build-and-fight loop with distinct roles: defenses provide sustained crowd control, while the player moves through the maze to respond to threats and breakthroughs.",
+      "Implemented grid-based building, live flow-field rerouting, and a placement guard that rejects sealed routes. Siege routing lets enemies weigh a detour against breaking through a wall.",
+      "Built first-person combat, build/combat phases, an in-run economy, destructible buildables, and turret, splash-turret, and ballista defenses.",
+      "Separated gameplay rules into testable C# models with thin Unity components, supported by EditMode tests and data-driven enemy and wave definitions.",
+      "Added per-wave damage attribution and run-pacing measurements. Playtests exposed how long mazes and affordable defenses could make shooting optional, guiding changes to pricing and siege routing."
+    ],
+    "outcome": "The current result is a playable gray-box prototype. I\u2019m using playtest measurements to refine defense pricing, enemy routes, and the player\u2019s role; the toy art and between-run character and weapon progression are still planned.",
+    "artifacts": [
+      "A dynamic maze-building and combat prototype with enemy routing and wall-breaking rules.",
+      "Damage-attribution and run-pacing instrumentation for balance iteration.",
+      "A game design document, architecture reference, core design decisions, and implementation plans."
+    ]
+  },
+  {
     "id": "player-progression",
     "title": "Player progression & retention",
     "category": "analytics",

@@ -4,6 +4,12 @@ Currently enrolled in college at Whitman, planning on studying Computer Science 
 This website is used to store current projects that I have worked on in or outside of class.
 
 
+# Interactive Portfolio
+Explore my workspace, game design and analytics projects, resume, and recommendation.
+
+- [Open my interactive portfolio](./portfolio.html)
+
+
 # Class Projects
   This was a project for my Data Science class where we used a kaggle dataset, then performed analysis to attempt to find a correlation between statistics that would give us an edge in our upcoming fantasy football league
 -  [Fantasy Football 2017 - 2022 Analysis.](https://maxfleming05.github.io/Fantasy-Football-Analysis/)

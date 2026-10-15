@@ -2,7 +2,7 @@
 
 [Open the interactive portfolio](https://maxfleming05.github.io/)
 
-`index.html` is the homepage and `portfolio.html` is an equivalent downloadable copy of the self-contained interactive portfolio with the illustrated workspace, seven projects covering game design and analytics, including the ongoing Unity prototype After Hours, an About panel, a clickable controller with Maxwell’s favorite games, a clickable blanket with Maxwell’s Whitman Sweets ultimate frisbee and captaincy section, and embedded contact-redacted documents. It works as a downloaded file without installation.
+`index.html` is the homepage and `portfolio.html` is an equivalent downloadable copy of the self-contained interactive portfolio with the illustrated workspace, seven projects covering game design and analytics, including the ongoing Unity prototype After Hours, a Research section on the notebook for the DDEINT paper submitted to IPDPS 2027, an About panel, a clickable controller with Maxwell’s favorite games, a clickable blanket with Maxwell’s Whitman Sweets ultimate frisbee and captaincy section, and embedded contact-redacted documents. It works as a downloaded file without installation.
 
 The former homepage is preserved as `projects.md`, available at `/projects.html` through the “Earlier projects” link. Its previous project links and `roadTripBox.html` remain available.
 

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Explore a personal workspace and discover game design and analytics projects, a resume, and recommendations.">
   <meta name="theme-color" content="#161c26">
-  <title>Maxwell Fleming · Game Design &amp; Analytics</title>
+  <title>Maxwell Fleming · Analytics-Driven Game Design</title>
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23161c26'/%3E%3Crect x='6' y='7' width='20' height='14' rx='2' fill='%23e7ae68'/%3E%3Crect x='8' y='9' width='16' height='10' fill='%232b3d56'/%3E%3Cpath d='M16 21v4M11 25h10' stroke='%23e7ae68' stroke-width='2'/%3E%3C/svg%3E">
   <style>
     :root { color-scheme: dark; --ink:#161c26; --panel:#202834; --text:#f5eee3; --muted:#b6beca; --gold:#e7ae68; --line:#ffffff20; }
@@ -189,7 +189,7 @@
     <header>
       <div class="identity">
         <span class="brand-mark" aria-hidden="true"><svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M12 17v4M7 21h10"/></svg></span>
-        <div><h1 id="owner-name">Maxwell Fleming</h1><p>Game design &amp; analytics</p></div>
+        <div><h1 id="owner-name">Maxwell Fleming</h1><p>Analytics-Driven Game Design</p></div>
       </div>
       <nav id="navigation" aria-label="Portfolio navigation">
         <button class="nav-button primary" data-open="projects">Projects</button>
@@ -490,7 +490,7 @@
     }
     function renderProjects(focusId) {
       resetPanel('Selected work', true);
-      body.append(element('p','eyebrow','Game design & analytics'), element('p','intro','I build game tools and simulations, and use data to understand players and improve game decisions.'));
+      body.append(element('p','eyebrow','Analytics-Driven Game Design'), element('p','intro','I build game tools and simulations, and use data to understand players and improve game decisions.'));
       const tabs = element('div','tabs');
       tabs.setAttribute('role','tablist');
       tabs.setAttribute('aria-label','Project category');
@@ -573,7 +573,7 @@
     }
     function renderAbout() {
       resetPanel('About Maxwell');
-      body.append(element('p','eyebrow','Game design & analytics'),element('p','about-lead','I’m a computer science student who builds game tools and uses data to understand how people play.'));
+      body.append(element('p','eyebrow','Analytics-Driven Game Design'),element('p','about-lead','I’m a computer science student who builds game tools and uses data to understand how people play.'));
       body.append(element('p','intro','My experience spans player progression, game balance, sales behavior, simulations, collaborative game development, and parallel scientific computing. I enjoy turning a question into something a team can use: an analysis, a dashboard, or a working tool.'));
       const grid = element('div','about-grid');
       const education = element('section','');
@@ -719,7 +719,7 @@
       button.querySelector('span').textContent = enabled ? 'Hide labels' : 'Show labels';
       room.classList.toggle('show-labels', enabled);
     });
-    if (PORTFOLIO.name) { document.getElementById('owner-name').textContent = PORTFOLIO.name; document.title = PORTFOLIO.name + ' · Game Design & Analytics'; }
+    if (PORTFOLIO.name) { document.getElementById('owner-name').textContent = PORTFOLIO.name; document.title = PORTFOLIO.name + ' · Analytics-Driven Game Design'; }
   </script>
 </body>
 </html>

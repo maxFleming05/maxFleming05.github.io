@@ -291,32 +291,6 @@
     ]
   },
   {
-    "id": "player-progression",
-    "title": "Player progression & retention",
-    "category": "analytics",
-    "context": "One More Game \u00b7 SWAPMEAT",
-    "role": "Data analyst",
-    "description": "Turning early-player behavior into actionable changes to run structure and progression.",
-    "tags": [
-      "Python",
-      "SQL",
-      "Dashboards"
-    ],
-    "question": "Where do new players make progress, and where do they stop playing?",
-    "contribution": [
-      "Analyzed engagement in the early parts of SWAPMEAT to identify progression bottlenecks and points where players quit.",
-      "Presented findings and recommendations in written analysis, team discussions, and video calls.",
-      "Built and deployed a dashboard that refreshed nightly on the team\u2019s existing analytics infrastructure."
-    ],
-    "outcome": "The analysis informed changes to run length and the point at which players returned to the lobby to swap equipment. My supervisor reported a measurable positive impact on engagement compared with Early Access.",
-    "artifacts": [
-      "A dashboard covering more than a dozen metrics, including the tutorial funnel, playtime, run counts, win/loss analysis, progression, and multiplayer behavior.",
-      "Calibration and forecasting queries for live community challenges, plus metrics published to the game\u2019s public data API."
-    ],
-    "evidence": "recommendation",
-    "evidenceLabel": "Read the recommendation"
-  },
-  {
     "id": "particle-sandbox",
     "title": "Particle Simulation Sandbox",
     "category": "game-design",
@@ -365,34 +339,8 @@
     "artifacts": [
       "Public source code and a README describing the toolkit, commands, and requirements."
     ],
-    "url": "https://github.com/maxFleming05/mineshaftMania",
-    "urlLabel": "View source on GitHub",
-    "evidence": "resume",
-    "evidenceLabel": "Read the resume"
-  },
-  {
-    "id": "game-balance",
-    "title": "Game balance tools",
-    "category": "analytics",
-    "context": "One More Game \u00b7 Development tools",
-    "role": "Data analysis & tooling",
-    "description": "Connecting Unity game data to structured datasets, simulation, and balance decisions.",
-    "tags": [
-      "Unity",
-      "DuckDB",
-      "Python"
-    ],
-    "question": "How can designers inspect weapon and enemy data and make better-informed balance decisions?",
-    "contribution": [
-      "Built a Unity-integrated exporter for real-time game data, including weapon statistics and enemy health and damage.",
-      "Produced structured datasets for balance analysis using SQL and Python.",
-      "Designed a team dashboard and a weapon simulation model, and collaborated on data-backed player progression targets."
-    ],
-    "outcome": "An export and analysis workflow that supported the team\u2019s game balance and progression decisions.",
-    "artifacts": [
-      "A Unity-integrated game-data exporter.",
-      "A team dashboard and weapon simulation model."
-    ],
+    "url": "https://modrinth.com/mod/mineshaft-mania/moderation",
+    "urlLabel": "View on Modrinth",
     "evidence": "resume",
     "evidenceLabel": "Read the resume"
   },
@@ -521,7 +469,7 @@
       if (!projects.length) {
         panel.append(emptyState('Projects coming soon', 'This collection is being prepared.', '✦'));
       } else {
-        panel.append(element('p','project-count',projects.length + ' projects'));
+        panel.append(element('p','project-count',projects.length + (projects.length === 1 ? ' project' : ' projects')));
         const grid = element('div','project-grid');
         projects.forEach(project => {
           const card = element('article','project');

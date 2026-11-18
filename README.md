@@ -26,3 +26,9 @@ The Research reader shows all eight paper pages alongside an independently scrol
 5. Make the same writing changes in `portfolio.html` to keep the downloadable offline copy consistent. Do not copy the entire homepage over it: the offline copy embeds additional research assets.
 
 The long embedded image and PDF strings do not need editing when changing the writing.
+
+## After Hours feature
+
+After Hours is the full-width featured project above four smaller project cards, arranged in two columns on desktop and one on mobile. Its detail view contains the full case study, a section menu, and horizontally scrollable comparison tables on narrow screens.
+
+The cleaned Markdown reference is `content/after-hours.md`. The displayed case-study HTML is in the readable `AFTER_HOURS_ARTICLE` constant in `index.html` and `portfolio.html`; edit those constants together when changing the full story. The short tile description, metrics, and tags remain in the After Hours entry in `PORTFOLIO.projects`. Updating the Markdown reference alone does not change the live story.

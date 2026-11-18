@@ -180,6 +180,58 @@
       .research-summary { padding:20px; }
       .research-summary .project-lead { font-size:22px; }
     }
+
+    .project:not(.project-featured) { padding:20px; }
+    .project:not(.project-featured) h3 { font-size:22px; }
+    .project:not(.project-featured) .project-heading { margin-bottom:12px; }
+    .project:not(.project-featured) .project-context { font-size:13px; }
+    .project:not(.project-featured) .project-description { font-size:14px; }
+    .project:not(.project-featured) .tags { margin-bottom:14px; }
+    .project-featured { grid-column:1 / -1; align-items:center; text-align:center; padding:28px 32px; border-color:#e7ae6866; background:radial-gradient(ellipse at top,#e7ae6814,transparent 70%),linear-gradient(135deg,#ffffff04,transparent); }
+    .project-featured .project-heading { width:100%; margin-bottom:14px; }
+    .project-featured h3 { font-size:42px; margin-bottom:8px; }
+    .project-featured .project-context { margin-bottom:16px!important; }
+    .featured-pitch { max-width:650px; margin:0 0 12px; font:500 25px/1.4 Georgia,serif; color:var(--text)!important; }
+    .project-featured .project-description { max-width:690px; flex:none; }
+    .project-featured .tags { justify-content:center; }
+    .project-featured .project-action { align-self:center; padding:11px 20px; background:#e7ae6815; }
+    .featured-stats { width:100%; max-width:690px; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; margin:4px 0 24px; padding:20px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .featured-stats dt { color:var(--gold); font:500 29px/1.2 Georgia,serif; }
+    .featured-stats dd { color:var(--muted); font-size:13px; margin:7px 0 0; }
+    .project-story,.case-toc { max-width:800px; margin-left:auto; margin-right:auto; }
+    .project-story { overflow-wrap:break-word; }
+    .project-story > p:first-child { font:500 25px/1.45 Georgia,serif; color:var(--text); }
+    .project-story p,.project-story li { color:var(--muted); }
+    .project-story strong { color:var(--text); font-weight:600; }
+    .project-story h3 { font:500 30px/1.3 Georgia,serif; margin:38px 0 16px; color:var(--text); scroll-margin-top:110px; }
+    .project-story h4 { font:500 22px/1.4 Georgia,serif; margin:28px 0 12px; color:var(--text); }
+    .project-story blockquote { margin:26px 0; padding:4px 0 4px 22px; border-left:3px solid var(--gold); }
+    .project-story blockquote p { color:var(--text); font:500 21px/1.6 Georgia,serif; }
+    .project-story li + li { margin-top:10px; }
+    .project-story ul,.project-story ol { padding-left:24px; }
+    .project-story hr { border:0; border-top:1px solid var(--line); margin:34px 0; }
+    .case-table { overflow-x:auto; margin:20px 0; border:1px solid var(--line); border-radius:8px; }
+    .case-table table { border-collapse:collapse; width:100%; min-width:540px; font-size:14px; line-height:1.6; }
+    .case-table th,.case-table td { padding:13px 16px; text-align:left; vertical-align:top; border-bottom:1px solid var(--line); }
+    .case-table th { color:var(--gold); background:#e7ae6809; font-weight:500; }
+    .case-table td { color:var(--muted); }
+    .case-table tr:last-child td { border-bottom:0; }
+    .case-toc { margin-top:6px; margin-bottom:30px; padding:16px 0 20px; border-bottom:1px solid var(--line); }
+    .case-toc summary { cursor:pointer; color:var(--gold); }
+    .case-toc nav { display:flex; flex-wrap:wrap; justify-content:flex-start; gap:8px 18px; margin-top:14px; }
+    .case-toc button { padding:0; border:0; background:none; color:var(--muted); font-size:14px; text-align:left; text-decoration:underline; text-underline-offset:4px; }
+    .case-toc button:hover { color:var(--gold); }
+    @media(max-width:540px) {
+      .project-featured { padding:26px 20px; }
+      .project-featured h3 { font-size:34px; }
+      .featured-pitch { font-size:22px; }
+      .featured-stats { gap:10px; }
+      .featured-stats dt { font-size:25px; }
+      .featured-stats dd { font-size:12px; }
+      .project-story h3 { font-size:26px; }
+      .project-story > p:first-child { font-size:23px; }
+    }
+
     @media(prefers-reduced-motion:reduce) { *,*::before,*::after { transition:none!important; animation:none!important; scroll-behavior:auto!important; } }
   </style>
 </head>
@@ -255,6 +307,243 @@
       return embeddedDocumentUrls[type];
     }
 
+    const AFTER_HOURS_ARTICLE = `<p><em>A first-person tower defense game, built in Unity 6.</em></p>
+<blockquote>
+<p>Someone left a chess game set up on the living-room rug overnight. When the lights go out, the
+junk-drawer toys come for the King. You are a small wooden meeple with a foam-dart blaster.
+Hold the board until morning.</p>
+</blockquote>
+<hr>
+<h3>What the game is</h3>
+<p><strong>After Hours</strong> combines two genres that usually stay apart: the maze-building of a classic tower
+defense and the moment-to-moment play of a first-person shooter. You don&#39;t watch the board from
+above; instead, you are in it.</p>
+<p>Each night is a run of 20 waves. Between waves it&#39;s <strong>your move</strong>: you spend toy building blocks
+to raise walls out of the board squares and place chess-piece defenses. When you end your turn
+it&#39;s <strong>their move</strong>, and wind-up toys climb onto the board and head for the King. Every wall you
+place changes the route they take. Every defense you place covers ground you can&#39;t. You then
+pick up the blaster and deal with whatever gets through.</p>
+<p>The toys don&#39;t just walk the maze you built. They&#39;re willing to break through it. Every ground
+enemy weighs the long way round against smashing a wall, and heads for the wall worth breaking.
+A good maze has to make the long way worth taking.</p>
+<h4>The two sides</h4>
+<div class="case-table" role="region" aria-label="Comparison table" tabindex="0"><table>
+<thead>
+<tr>
+<th>You: the games cabinet</th>
+<th>Them: the junk drawer</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Turned and carved wood: ivory, maple, boxwood. Calm.</td>
+<td>Saturated toy plastic and painted tin. Loud.</td>
+</tr>
+<tr>
+<td><strong>The Rook</strong>: sustained single-target fire, the backbone of any defense</td>
+<td><strong>Bunnies</strong> that hop fast down the lanes</td>
+</tr>
+<tr>
+<td><strong>The Knight</strong>: a stubby piece that stomps groups of enemies at once</td>
+<td><strong>Chicks</strong> that flood the board in swarms</td>
+</tr>
+<tr>
+<td><strong>The Bishop</strong>: the tallest piece, with long range that cuts through armour</td>
+<td><strong>Tin robots</strong>: armoured, so light shots are reduced</td>
+</tr>
+<tr>
+<td><strong>Walls</strong>: board squares that rise out of the board</td>
+<td><strong>Green army men</strong> who shoot back at you</td>
+</tr>
+<tr>
+<td><strong>The King</strong>: what you&#39;re protecting</td>
+<td><strong>Helicopters</strong> that fly over your maze entirely</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Firemen</strong> who carry ladders and climb over walls</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>The Cymbal Monkey</strong>, a 6.5 m boss that smashes through everything in its way</td>
+</tr>
+</tbody></table></div>
+<p>Every enemy has a wind-up key on its back. When one is defeated, the key stops and the toy topples
+over. The tone is playful and frantic, never gritty: no blood, just a living room at toy scale
+with furniture towering overhead.</p>
+<hr>
+<h3>The design problem at the heart of it</h3>
+<p>Most hybrid tower-defense shooters slide into one of two failures. Either the towers do all the
+work and the shooting is effectively cosmetic, or the player does all the work and the towers are
+glorified peashooters. <strong>After Hours is built around keeping both halves essential.</strong></p>
+<p>The target is a <strong>50/50 damage split</strong>. Over a wave, defenses should remove about half the
+enemies&#39; total health and the player the other half. The important part is that the two halves
+do <em>different jobs</em>:</p>
+<ul>
+<li><strong>Defenses</strong> grind through volume, all the time, on ground the player isn&#39;t standing on.</li>
+<li><strong>The player</strong> fills in the gaps. You can build your defense to target certain groups of enemies, leaving the rest to yourself.</li>
+</ul>
+<p>Every defense has one clear job and one weakness the player has to cover. The Rook can&#39;t hurt
+armour much. The Knight sits below wall height, so it can&#39;t see over walls. The Bishop is slow
+against crowds. The board is 40 by 100 metres, too big to cover on foot. So every wave forces your hand: <em>where do I stand, and what&#39;s going to leak somewhere else?</em></p>
+<h4>Balance: Measuring it instead of guessing</h4>
+<p>Getting the balance right is something I value greatly, so I decided the best way to get it right was by measuring. The game includes a damage ledger that records every point of damage dealt, by whom, in every wave, and writes a full report at the end of a run.</p>
+<p>The first measurements were... embarrassing:</p>
+<ul>
+<li>A short 7-wave run came out close to even. But over a full 20-wave run, the player&#39;s share fell
+to <strong>31% in the last seven waves</strong>. One late wave was cleared with the player dealing zero
+damage at all (I can chalk that to a really good defense...).</li>
+<li>The cause wasn&#39;t the number of defenses. It was <strong>path length</strong>. A long, winding maze made 8
+defenses do the work of 13. The run ended with plenty of money unspent, because more defenses
+weren&#39;t needed.</li>
+</ul>
+<p>That finding reshaped the game. An early fix, a funnel rule, was tried, playtested and rejected.
+Enemies that break walls replaced it, so a long maze has a cost. I took inspiration from troop pathing in Clash of Clans, as I remember really enjoying the balance they had. I also added a price increase with each additional defense purchase. Alongside those nerfs, I decided to give the player some love. In-run XP and upgrade cards gave the player a way to keep pace late in a run. After
+those changes, two full playtests measured the player&#39;s share in the last seven waves at <strong>53% and
+46%</strong>, both inside the 40–60% target band.</p>
+<hr>
+<h3>What&#39;s been built</h3>
+<p>The game is playable end to end. Highlights:</p>
+<ul>
+<li><strong>Grid, pathfinding and building.</strong> A 20 × 50 board of 2 m squares. Enemies route with a
+<strong>flow field</strong>, which works out the best direction to the King from every square at once, so
+hundreds of enemies can path cheaply. It updates only when a wall goes up or comes down. A
+softlock guard stops you sealing the King off completely, and separate fields handle ground
+enemies and flyers.</li>
+<li><strong>Walls that can be broken.</strong> Walls count as passable at a cost, so enemies decide whether
+breaking one beats walking round. Firemen plant ladders to climb over walls instead of breaking
+them.</li>
+<li><strong>Combat.</strong> Enemy health and armour, damage numbers, kill effects, and a player blaster with a
+magazine and reloads. Defense line of sight runs from each piece&#39;s head, so a piece&#39;s height
+decides what it can shoot over.</li>
+<li><strong>A 20-wave night</strong> with build and fight phases, rising defense prices, boss waves at 10 and 20,
+and a base health bar.</li>
+<li><strong>Player progression in a run.</strong> Enemies defeated by defenses drop gold star stickers as XP.
+Each level offers a choice of upgrade cards: damage against tough targets, fire rate, movement
+speed, max health, recovery, magazine size and reload speed (more to come!)</li>
+<li><strong>The After Hours art pass.</strong> Every enemy, defense, wall and the room around the board has a
+model. The toys hop, waddle and hover in their own ways. Defense pieces visibly fire peas and
+pencils at their targets.</li>
+<li><strong>A HUD</strong> with health bars, an XP strip, a hotbar for building, and custom icons.</li>
+</ul>
+<p>The current focus is a <strong>demo build</strong>: title screen, pause, win and lose screens, settings, and a
+first macOS build to put in a friend&#39;s hands.</p>
+<hr>
+<h3>How it&#39;s built</h3>
+<h4>Pure rules, thin scene glue</h4>
+<p>The core coding rule is to <strong>keep game rules out of Unity components</strong>. The rules live in plain
+C# classes: how the flow field works out a route, how armour reduces a hit, how XP turns into
+levels. Small Unity components connect those rules to the scene. Because the rules don&#39;t depend
+on the engine, they can be tested in milliseconds, without a scene.</p>
+<h4>Visuals listen; they never decide</h4>
+<p>Effects are kept strictly separate from gameplay. When a Rook shoots, the damage lands instantly.
+The pea you see flying is a visual that listens for the shot after it has happened. Visuals can
+be added, retuned or switched off without any chance of changing balance. Each new visual system
+has its own on/off switch, so its performance cost can be measured with it on and off.</p>
+<h4>Models in slots</h4>
+<p>Every model in the game fills a <strong>slot</strong> in a code-built placeholder. If a slot is empty, the game
+falls back to the placeholder and warns once, loudly. Gameplay came first, art came after it was polished. The whole game was playable with grey boxes before the art direction was even decided, and each model
+dropped into place when it was ready.</p>
+<h4>Documentation that records <em>why</em></h4>
+<p>The project keeps a detailed architecture reference. Its rule is that a change isn&#39;t done until
+the reference says it happened. The reference records <strong>decisions and their reasons</strong>: what was
+chosen, what was rejected, and the measurement or playtest that drove it. Anyone can read the code
+to learn what it does. The docs exist so nobody has to rediscover why it isn&#39;t done the other way.</p>
+<hr>
+<h3>Testing</h3>
+<p>Testing has been central to the project from the start. I have been a big fan of A/B testing, and playing through things before making choices.</p>
+<ul>
+<li><strong>Automated tests.</strong> More than 1,500 unit tests cover the game rules, all run before any change
+is committed. They cover the unhappy paths, not just the happy ones: a wall that would seal off
+the King, a model that&#39;s missing, a pool of projectiles that&#39;s full.</li>
+<li><strong>Play-checks.</strong> Every batch of work ends with a short checklist of what to look for in play.
+Nothing is committed until a human has played it and confirmed it.</li>
+<li><strong>Measured playtests.</strong> I have played through the full game upwards of 100 times. Each full 20-wave run produces a report: damage share per wave and per enemy type, upgrade choices, deaths, reload timing, boss fights. Balance changes are argued from these numbers, not from feel alone.</li>
+<li><strong>Performance comparisons.</strong> New visual systems are measured with their switch on and off over
+the same late waves. Dressing the whole scene in art cost <strong>under a millisecond</strong> per frame, and
+the cost stayed flat rather than growing with enemy count.</li>
+</ul>
+<hr>
+<h3>Building with AI agents</h3>
+<p>After Hours is a solo project built with <strong>Claude Code</strong> as a development partner. The interesting part isn&#39;t that AI wrote code. It&#39;s <strong>how the work is split so the AI can&#39;t quietly make decisions that belong to the designer.</strong></p>
+<h4>Four agents, four jobs</h4>
+<div class="case-table" role="region" aria-label="Comparison table" tabindex="0"><table>
+<thead>
+<tr>
+<th>Agent</th>
+<th>Job</th>
+<th>What it is <em>not allowed</em> to do</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Planner</strong></td>
+<td>Talks through a feature, then writes a step-by-step implementation plan</td>
+<td>Write or edit any game code</td>
+</tr>
+<tr>
+<td><strong>Implementer</strong></td>
+<td>Builds from a plan, runs the tests, and updates the architecture docs</td>
+<td>Invent balance numbers or player-facing behaviour. It stops and asks instead</td>
+</tr>
+<tr>
+<td><strong>Code reviewer</strong></td>
+<td>Reviews changes against the project&#39;s style guide and returns a verdict</td>
+<td>Change anything. It has no write access at all</td>
+</tr>
+<tr>
+<td><strong>Art director</strong></td>
+<td>Turns art needs and playtest findings into precise requests for the 3D artist</td>
+<td>Touch models, Unity or code</td>
+</tr>
+</tbody></table></div>
+<p>The split exists because a single agent that both designs a mechanic and codes it will make up
+numbers halfway through and present them as if they were specified. Splitting the roles turns
+that into a visible handoff. The limits are enforced by <strong>which tools each agent is given</strong>, not
+just by its instructions. The reviewer can&#39;t fix code because it physically has no way to write
+files.</p>
+<h4>The loop</h4>
+<ol>
+<li><strong>Plan.</strong> A design conversation produces a written plan with numbered steps, first-guess
+values, and the open questions only the designer can answer.</li>
+<li><strong>Build.</strong> The implementer builds a few steps, compiles the project, runs the full test suite
+and reports what it did, including anything it did differently from the plan and why.</li>
+<li><strong>Verify.</strong> The main session re-runs the tests itself and reads the changes, rather than
+trusting the report.</li>
+<li><strong>Play-check.</strong> The designer plays it against a checklist.</li>
+<li><strong>Commit.</strong> Only on the designer&#39;s say-so.</li>
+<li><strong>Review.</strong> Every few batches, the reviewer covers everything since its last review. Changes to
+shared core rules, like pathfinding or damage, get reviewed <strong>immediately</strong>. Early on, a review
+caught a serious bug that 335 passing tests had missed.</li>
+</ol>
+<h4>Giving the AI eyes on the engine</h4>
+<p>Through Unity&#39;s command-line tools and its MCP integration, the agents can recompile the
+project, run the test suite, inspect the scene and wire up components directly in the running
+editor. That closes the loop. The AI checks its own work against real test results instead of
+guessing, and when something fails it can see why.</p>
+<h4>Working with the art</h4>
+<p>The 3D models are made using ChatGPT’s Blender editor. The art-director agent checks each request before it
+goes out: does the asset already exist? Is the problem really art, or a code gap? Does it fit the
+locked art direction? Then it writes a precise request with measurements and constraints.
+Deliveries are verified in the engine: imported sizes checked against the brief, materials and
+orientation checked, and tests confirm that each model fits its gameplay footprint.</p>
+<h4>What stays human</h4>
+<p>The designer makes the design calls: the setting, the tone, the damage target, which mechanics
+stay, and how things feel. Agents propose, build, measure and report. When a playtest says a rule
+feels wrong, the rule goes, however well it tested. The funnel rule is the clearest example.</p>
+<hr>
+<h3>By the numbers</h3>
+<ul>
+<li><strong>Started:</strong> September 2026</li>
+<li><strong>Engine:</strong> Unity 6, Universal Render Pipeline</li>
+<li><strong>Automated tests:</strong> 1,548, all passing</li>
+<li><strong>A full night:</strong> 20 waves, with boss fights at waves 10 and 20</li>
+<li><strong>Board:</strong> 20 × 50 squares, 40 m × 100 m at toy scale (about 35× real size)</li>
+<li><strong>Measured player damage share in the last seven waves:</strong> 53% and 46% across two full playtests,
+against a 50% target</li>
+</ul>
+<hr>
+<p><em>After Hours is a working title. The game is in active development.</em></p>
+`;
+
     const PORTFOLIO = {
       name: "Maxwell Fleming",
       linkedin: "https://www.linkedin.com/in/max-fleming05/",
@@ -264,37 +553,40 @@
       projects: [
   {
     "id": "after-hours",
-    "title": "After Hours (working title)",
+    "title": "After Hours",
     "category": "game-design",
-    "context": "Unity prototype \u00b7 In development",
+    "context": "Solo project · Unity 6 · In development",
     "role": "Game design & Unity development",
-    "description": "I\u2019m developing a Unity game that combines first-person combat with a maze you build yourself. The goal is to make planning and shooting equally necessary: defenses control crowds, while the player handles threats. Its planned toy-diorama setting pits a wooden meeple and chess-piece defenses against invading wind-up toys.",
+    "featured": true,
+    "pitch": "Hold the board until morning.",
+    "description": "A first-person tower defense game where a wooden meeple defends a chessboard from wind-up toys. Build the maze, place chess-piece defenses, and fight alongside them—with playtest data guiding the balance between planning and shooting.",
     "tags": [
       "Unity 6",
       "C#",
       "Systems design",
       "Gameplay analytics"
     ],
-    "question": "How can building the battlefield and fighting inside it both stay essential as a run gets longer?",
-    "contribution": [
-      "Designed a build-and-fight loop with distinct roles: defenses provide sustained crowd control, while the player moves through the maze to respond to threats and breakthroughs.",
-      "Implemented grid-based building, live flow-field rerouting, and a placement guard that rejects sealed routes. Siege routing lets enemies weigh a detour against breaking through a wall.",
-      "Built first-person combat, build/combat phases, an in-run economy, destructible buildables, and turret, splash-turret, and ballista defenses.",
-      "Separated gameplay rules into testable C# models with thin Unity components, supported by EditMode tests and data-driven enemy and wave definitions.",
-      "Added per-wave damage attribution and run-pacing measurements. Playtests exposed how long mazes and affordable defenses could make shooting optional, guiding changes to pricing and siege routing."
+    "metrics": [
+      [
+        "20",
+        "waves per night"
+      ],
+      [
+        "1,548",
+        "automated tests"
+      ],
+      [
+        "46–53%",
+        "player share, final 7 waves (2 runs)"
+      ]
     ],
-    "outcome": "The current result is a playable gray-box prototype. I\u2019m using playtest measurements to refine defense pricing, enemy routes, and the player\u2019s role; the toy art and between-run character and weapon progression are still planned.",
-    "artifacts": [
-      "A dynamic maze-building and combat prototype with enemy routing and wall-breaking rules.",
-      "Damage-attribution and run-pacing instrumentation for balance iteration.",
-      "A game design document, architecture reference, core design decisions, and implementation plans."
-    ]
+    "article": "after-hours"
   },
   {
     "id": "particle-sandbox",
     "title": "Particle Simulation Sandbox",
     "category": "game-design",
-    "context": "Computer simulations \u00b7 Team project",
+    "context": "Computer simulations · Team project",
     "role": "Simulation development",
     "description": "A falling-sand sandbox exploring interactions between solids, fluids, and gases.",
     "tags": [
@@ -321,7 +613,7 @@
     "id": "mineshaft-mania",
     "title": "MineshaftMania",
     "category": "game-design",
-    "context": "Hypixel SkyBlock \u00b7 Client-side mod",
+    "context": "Hypixel SkyBlock · Client-side mod",
     "role": "Mod development & UI",
     "description": "A Minecraft toolkit that makes mineshaft activity, loot, and profitability easier to track.",
     "tags": [
@@ -348,7 +640,7 @@
     "id": "harmony",
     "title": "Harmony",
     "category": "game-design",
-    "context": "Walla Walla Guitar Company \u00b7 Course project",
+    "context": "Walla Walla Guitar Company · Course project",
     "role": "Team game design",
     "description": "A collaborative game design project developed with a real client.",
     "tags": [
@@ -373,7 +665,7 @@
     "id": "sales-analytics",
     "title": "Sales behavior analysis",
     "category": "analytics",
-    "context": "Ironwood Games \u00b7 Business analytics",
+    "context": "Ironwood Games · Business analytics",
     "role": "Data analyst",
     "description": "Examining sales promotions and events to support business decisions.",
     "tags": [
@@ -472,16 +764,30 @@
         panel.append(element('p','project-count',projects.length + (projects.length === 1 ? ' project' : ' projects')));
         const grid = element('div','project-grid');
         projects.forEach(project => {
-          const card = element('article','project');
+          const card = element('article',project.featured ? 'project project-featured' : 'project');
+          card.setAttribute('aria-labelledby','title-' + project.id);
           const heading = element('div','project-heading');
-          heading.append(element('span','project-type',project.category === 'game-design' ? 'Game design' : 'Analytics'),element('span','project-number',String(PORTFOLIO.projects.indexOf(project)+1).padStart(2,'0')));
-          card.append(heading,element('p','project-context',project.context),element('h3','',project.title),element('p','project-description',project.description));
+          heading.append(element('span','project-type',project.featured ? 'Featured project' : project.category === 'game-design' ? 'Game design' : 'Analytics'),element('span','project-number',String(PORTFOLIO.projects.indexOf(project)+1).padStart(2,'0')));
+          const projectTitle = element('h3','',project.title);
+          projectTitle.id = 'title-' + project.id;
+          card.append(heading,element('p','project-context',project.context),projectTitle);
+          if (project.pitch) card.append(element('p','featured-pitch',project.pitch));
+          card.append(element('p','project-description',project.description));
+          if (project.metrics) {
+            const stats = element('dl','featured-stats');
+            project.metrics.forEach(([value,label]) => {
+              const group = element('div','');
+              group.append(element('dt','',value),element('dd','',label));
+              stats.append(group);
+            });
+            card.append(stats);
+          }
           const tags = element('div','tags');
           project.tags.forEach(tag => tags.append(element('span','tag',tag)));
           card.append(tags);
-          const button = element('button','project-action','Read project');
+          const button = element('button','project-action',project.featured ? 'Explore After Hours' : 'Read project');
           button.id = 'project-' + project.id;
-          button.setAttribute('aria-label','Read project: ' + project.title);
+          button.setAttribute('aria-label',project.featured ? 'Explore After Hours' : 'Read project: ' + project.title);
           button.addEventListener('click', () => { renderProject(project); close.focus(); });
           card.append(button);
           grid.append(card);
@@ -503,6 +809,29 @@
       resetPanel(project.title,true);
       const back = element('button','back-projects','Back to selected work');
       back.addEventListener('click', () => renderProjects(project.id));
+      if (project.article === 'after-hours') {
+        body.append(back,element('p','eyebrow','Solo project · Unity 6 · In development'));
+        const story = element('article','project-story');
+        story.setAttribute('aria-label','After Hours case study');
+        story.innerHTML = AFTER_HOURS_ARTICLE;
+        const contents = element('details','case-toc');
+        contents.append(element('summary','','Explore the case study'));
+        const navigation = element('nav','');
+        navigation.setAttribute('aria-label','Case study sections');
+        story.querySelectorAll('h3').forEach((heading,index) => {
+          heading.id = 'after-hours-section-' + index;
+          heading.tabIndex = -1;
+          const jump = element('button','',heading.textContent);
+          jump.addEventListener('click', () => { heading.scrollIntoView({block:'start'}); heading.focus({preventScroll:true}); });
+          navigation.append(jump);
+        });
+        contents.append(navigation);
+        body.append(contents,story);
+        const returnButton = element('button','back-projects','Back to selected work');
+        returnButton.addEventListener('click', () => renderProjects(project.id));
+        body.append(returnButton);
+        return;
+      }
       body.append(back,element('p','eyebrow',project.category === 'game-design' ? 'Game design' : 'Analytics'),element('p','project-lead',project.description));
       const metadata = element('dl','case-meta');
       [['Context',project.context],['My role',project.role]].forEach(([label,value]) => {

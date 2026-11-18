@@ -133,6 +133,7 @@
     .case-section { margin:0 0 28px; max-width:760px; }
     .case-section h3 { font:500 24px/1.3 Georgia,serif; margin:0 0 12px; }
     .case-section p { margin:0; color:var(--muted); }
+    .case-section p + p { margin-top:14px; }
     .case-section ul { margin:0; padding-left:22px; color:var(--muted); }
     .case-section li + li { margin-top:10px; }
     .case-actions { display:flex; gap:12px; flex-wrap:wrap; padding-top:6px; }
@@ -553,11 +554,11 @@ against a 50% target</li>
     "id": "after-hours",
     "title": "After Hours",
     "category": "game-design",
-    "context": "Solo project · Unity 6 · In development",
+    "context": "Solo project \u00b7 Unity 6 \u00b7 In development",
     "role": "Game design & Unity development",
     "featured": true,
     "pitch": "Hold the board until morning.",
-    "description": "A first-person tower defense game where a wooden meeple defends a chessboard from wind-up toys. Build the maze, place chess-piece defenses, and fight alongside them—with playtest data guiding the balance between planning and shooting.",
+    "description": "A first-person tower defense game where a wooden meeple defends a chessboard from wind-up toys. Build the maze, place chess-piece defenses, and fight alongside them\u2014with playtest data guiding the balance between planning and shooting.",
     "tags": [
       "Unity 6",
       "C#",
@@ -574,7 +575,7 @@ against a 50% target</li>
         "automated tests"
       ],
       [
-        "46–53%",
+        "46\u201353%",
         "player share, final 7 waves (2 runs)"
       ]
     ],
@@ -584,7 +585,7 @@ against a 50% target</li>
     "id": "particle-sandbox",
     "title": "Particle Simulation Sandbox",
     "category": "game-design",
-    "context": "Computer simulations · Team project",
+    "context": "Computer simulations \u00b7 Team project",
     "role": "Simulation development",
     "description": "A falling-sand sandbox exploring interactions between solids, fluids, and gases.",
     "tags": [
@@ -611,34 +612,52 @@ against a 50% target</li>
     "id": "mineshaft-mania",
     "title": "MineshaftMania",
     "category": "game-design",
-    "context": "Hypixel SkyBlock · Client-side mod",
+    "context": "Hypixel SkyBlock \u00b7 Client-side mod",
     "role": "Mod development & UI",
-    "description": "A Minecraft toolkit that makes mineshaft activity, loot, and profitability easier to track.",
+    "description": "Quality-of-life tools for mining in Hypixel SkyBlock, built around gaps I encountered as a player and refined through community feedback.",
     "tags": [
       "Kotlin",
       "Fabric",
       "Custom UI"
     ],
-    "question": "How can a player understand what is happening in a mineshaft session without leaving the game?",
-    "contribution": [
-      "Built a custom interface for activity and profit tracking in Hypixel SkyBlock.",
-      "Implemented chat and packet parsing, Mixin-based interception, and a configurable HUD.",
-      "The public toolkit includes corpse and fossil waypoints, session statistics, loot tracking, and live-price profit calculations."
-    ],
-    "outcome": "A client-side toolkit with configurable modules and repositionable HUD elements. The repository includes installation instructions and a feature breakdown.",
-    "artifacts": [
-      "Public source code and a README describing the toolkit, commands, and requirements."
-    ],
     "url": "https://modrinth.com/mod/mineshaft-mania/moderation",
     "urlLabel": "View on Modrinth",
     "evidence": "resume",
-    "evidenceLabel": "Read the resume"
+    "evidenceLabel": "Read the resume",
+    "sections": [
+      {
+        "heading": "What is this for?",
+        "paragraphs": [
+          "Hypixel SkyBlock is a game mode on the Hypixel Minecraft server. Players travel between islands with different activities, and mining is one of the core skills. Mineshaft Mania focuses on improving the mining experience."
+        ]
+      },
+      {
+        "heading": "What does this accomplish?",
+        "paragraphs": [
+          "The mod adds quality-of-life tools for mining by parsing in-game chat, tracking specific messages and events, and displaying that information directly on the player\u2019s screen. It makes useful mining information easier to follow without having to keep track of everything manually."
+        ]
+      },
+      {
+        "heading": "Why did I do this?",
+        "paragraphs": [
+          "After hundreds of hours playing Hypixel SkyBlock, I kept running into things I wished the base game or existing mods could do. There are plenty of mods, but some of the features I wanted were still missing. I decided to try building a mod to fill those gaps.",
+          "The project started as a tool for myself. As I kept playing, I gathered feedback from experienced players who had noticed the same gaps and shared their own ideas. Their input helped shape the mod and encouraged me to publish it for others to use."
+        ]
+      },
+      {
+        "heading": "Where it is now",
+        "paragraphs": [
+          "That project became Mineshaft Mania. It is awaiting approval for public release on Modrinth, and its source code is publicly available on GitHub."
+        ]
+      }
+    ],
+    "sourceUrl": "https://github.com/maxFleming05/mineshaftMania"
   },
   {
     "id": "harmony",
     "title": "Harmony",
     "category": "game-design",
-    "context": "Walla Walla Guitar Company · Course project",
+    "context": "Walla Walla Guitar Company \u00b7 Course project",
     "role": "Team game design",
     "description": "A collaborative game design project developed with a real client.",
     "tags": [
@@ -663,7 +682,7 @@ against a 50% target</li>
     "id": "sales-analytics",
     "title": "Sales behavior analysis",
     "category": "analytics",
-    "context": "Ironwood Games · Business analytics",
+    "context": "Ironwood Games \u00b7 Business analytics",
     "role": "Data analyst",
     "description": "Examining sales promotions and events to support business decisions.",
     "tags": [
@@ -835,10 +854,21 @@ against a 50% target</li>
       [['Context',project.context],['My role',project.role]].forEach(([label,value]) => {
         const group=element('div','');group.append(element('dt','',label),element('dd','',value));metadata.append(group);
       });
-      body.append(metadata,caseSection('The question',project.question),caseSection('My contribution',project.contribution),caseSection('The outcome',project.outcome),caseSection('What I built',project.artifacts));
+      body.append(metadata);
+      if (project.sections) {
+        project.sections.forEach(({heading,paragraphs}) => {
+          const section = element('section','case-section');
+          section.append(element('h3','',heading));
+          paragraphs.forEach(text => section.append(element('p','',text)));
+          body.append(section);
+        });
+      } else {
+        body.append(caseSection('The question',project.question),caseSection('My contribution',project.contribution),caseSection('The outcome',project.outcome),caseSection('What I built',project.artifacts));
+      }
       const tools = element('div','tags'); project.tags.forEach(tag => tools.append(element('span','tag',tag))); body.append(tools);
       const actions = element('div','case-actions');
       if (safeUrl(project.url)) actions.append(externalLink(project.urlLabel,project.url,'profile-link'));
+      if (safeUrl(project.sourceUrl)) actions.append(externalLink('View source on GitHub',project.sourceUrl,'profile-link'));
       if (project.evidence) {
         const evidence = element('button','project-action',project.evidenceLabel);
         evidence.addEventListener('click', () => { renderDocument(project.evidence); close.focus(); });

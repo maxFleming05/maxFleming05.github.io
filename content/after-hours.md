@@ -199,11 +199,11 @@ guessing, and when something fails it can see why.
 
 ### Working with the art
 
-The 3D models are made using ChatGPT’s Blender editor. The art-director agent checks each request before it
-goes out: does the asset already exist? Is the problem really art, or a code gap? Does it fit the
-locked art direction? Then it writes a precise request with measurements and constraints.
-Deliveries are verified in the engine: imported sizes checked against the brief, materials and
-orientation checked, and tests confirm that each model fits its gameplay footprint.
+The 3D models are currently made using ChatGPT’s Blender editor. I would have liked to approach this differently, but given my current art skills, this is the best option for now. In the future, I hope to learn enough to remake or edit the models myself, or bring in an artist, though that is a longer-term goal.
+
+The art-director agent checks each request before it goes out: does the asset already exist? Is the problem really art, or a code gap? Does it fit the locked art direction? Then it writes a precise request with measurements and constraints.
+
+Deliveries are verified in the engine: imported sizes are checked against the brief, materials and orientation are checked, and tests confirm that each model fits its gameplay footprint.
 
 ### What stays human
 

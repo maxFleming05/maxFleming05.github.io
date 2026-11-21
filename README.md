@@ -34,3 +34,9 @@ After Hours is the full-width featured project above four smaller project cards,
 The cleaned Markdown reference is `content/after-hours.md`. The displayed case-study HTML is in the readable `AFTER_HOURS_ARTICLE` constant in `index.html` and `portfolio.html`; edit those constants together when changing the full story. The short tile description, metrics, and tags remain in the After Hours entry in `PORTFOLIO.projects`. Updating the Markdown reference alone does not change the live story.
 
 Private contact details use readable masks instead of black bars in both documents: the resume shows `m**@*.com` and `425-*-***`, the recommendation uses the same style, and the resume location is shown as “Location withheld.” The original contact text and links are excluded from the public PDFs.
+
+## After Hours media
+
+The featured project includes Rook and Bunny images that open the defender and enemy showcases. The case study has two selectable model viewers and a Fireman ladder-placement video beneath “Walls that can be broken.” The Bunny, Chick, and Helicopter inline clips under the art-pass description are omitted.
+
+`media/after-hours/` contains 13 optimized JPEG posters and 13 silent H.264 MP4 clips. `AFTER_HOURS_MEDIA` in both HTML copies defines their paths and captions. Keep the adjacent media directory with a downloaded `portfolio.html`; the videos use relative files. Clips play on request and pause when another clip starts, when they leave view, or when the panel closes. Original Unity captures are not included in the repository.

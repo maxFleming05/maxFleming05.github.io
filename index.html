@@ -233,6 +233,47 @@
       .project-story > p:first-child { font-size:23px; }
     }
 
+
+    .featured-showcase-layout { display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); align-items:center; width:100%; gap:28px; margin:8px 0 24px; }
+    .featured-copy { min-width:0; text-align:left; }
+    .featured-copy .tags { justify-content:flex-start; }
+    .featured-media { display:grid; grid-template-columns:1fr 1fr; width:100%; gap:12px; margin:0; }
+    .featured-media button { position:relative; display:block; min-width:0; padding:0; border:1px solid var(--line); border-radius:9px; overflow:hidden; background:#211c18; text-align:left; }
+    .featured-media button:hover { border-color:var(--gold); }
+    .featured-media img { display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; margin:0; border-radius:0; }
+    .featured-media span { display:block; padding:10px 14px; color:var(--text); font-size:14px; }
+    .showcase { margin:26px 0 34px; }
+    .showcase h5 { font:500 24px/1.35 Georgia,serif; margin:0 0 8px; scroll-margin-top:110px; }
+    .showcase-note { font-size:14px; color:var(--muted); margin:0 0 16px; }
+    .showcase-player { margin:0; padding:0; border:1px solid var(--line); border-radius:9px; overflow:hidden; background:#181b22; }
+    .showcase video,.inline-showcase video { display:block; width:100%; aspect-ratio:16/9; object-fit:contain; background:#211c18; }
+    .showcase-caption { padding:16px 18px; }
+    .showcase-caption h6 { font:500 23px/1.3 Georgia,serif; margin:0 0 8px; }
+    .showcase-caption p { margin:0 0 8px; font-size:16px; }
+    .showcase-caption .showcase-meta { margin:0; font-size:14px; color:var(--gold); }
+    .showcase-options { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; margin-top:12px; }
+    .showcase-option { min-width:0; padding:0; overflow:hidden; border:1px solid var(--line); border-radius:7px; background:#ffffff04; color:var(--muted); text-align:left; }
+    .showcase-option img { display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; }
+    .showcase-option span { display:block; padding:8px 10px; font-size:14px; line-height:1.4; }
+    .showcase-option[aria-pressed="true"] { border-color:var(--gold); box-shadow:0 0 0 1px var(--gold); color:var(--text); background:#e7ae6812; }
+    .showcase-option:hover { border-color:#e7ae6880; color:var(--text); }
+    .inline-showcase { margin:18px 0 8px; border:1px solid var(--line); border-radius:8px; overflow:hidden; }
+    .inline-showcase figcaption { padding:12px 14px; color:var(--muted); font-size:14px; line-height:1.5; }
+    .animation-strip { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin:18px 0 8px; }
+    .animation-strip .inline-showcase { margin:0; min-width:0; }
+    .animation-strip figcaption { padding:10px 12px; }
+    @media(max-width:600px) {
+      .featured-showcase-layout { grid-template-columns:1fr; gap:20px; }
+      .featured-copy { text-align:center; }
+      .featured-copy .tags { justify-content:center; }
+      .featured-media { order:-1; }
+      .showcase-options { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .animation-strip { grid-template-columns:1fr; }
+      .showcase-caption { padding:14px; }
+      .featured-media { gap:8px; }
+      .featured-media span { font-size:14px; padding:9px; }
+    }
+
     @media(prefers-reduced-motion:reduce) { *,*::before,*::after { transition:none!important; animation:none!important; scroll-behavior:auto!important; } }
   </style>
 </head>
@@ -308,6 +349,145 @@
       return embeddedDocumentUrls[type];
     }
 
+    const AFTER_HOURS_MEDIA = {
+  "defenses": [
+    {
+      "id": "rook",
+      "name": "The Rook",
+      "description": "Sustained single-target fire: the backbone of a defense. Light shots struggle against armour.",
+      "alt": "A white Rook with a short blue-tipped barrel on the wooden chessboard.",
+      "kind": "Turntable",
+      "seconds": 12,
+      "poster": "media/after-hours/rook.jpg",
+      "video": "media/after-hours/rook.mp4"
+    },
+    {
+      "id": "knight",
+      "name": "The Knight",
+      "description": "Stomps groups of enemies at once. Its low profile means it cannot see over walls.",
+      "alt": "A low, white horse-shaped Knight with a blue accent on the wooden chessboard.",
+      "kind": "Turntable",
+      "seconds": 12,
+      "poster": "media/after-hours/knight.jpg",
+      "video": "media/after-hours/knight.mp4"
+    },
+    {
+      "id": "bishop",
+      "name": "The Bishop",
+      "description": "A tall, long-range piece that cuts through armour, but is slow against crowds.",
+      "alt": "A tall, white Bishop with a long barrel on the wooden chessboard.",
+      "kind": "Turntable",
+      "seconds": 12,
+      "poster": "media/after-hours/bishop.jpg",
+      "video": "media/after-hours/bishop.mp4"
+    },
+    {
+      "id": "king",
+      "name": "The King",
+      "description": "The piece you protect through the night.",
+      "alt": "A white King topped with a cross on the wooden chessboard.",
+      "kind": "Turntable",
+      "seconds": 12,
+      "poster": "media/after-hours/king.jpg",
+      "video": "media/after-hours/king.mp4"
+    }
+  ],
+  "enemies": [
+    {
+      "id": "bunny",
+      "name": "Bunny",
+      "description": "A fast runner that hops down the lanes.",
+      "alt": "A pink toy bunny with tall ears and a gold wind-up key.",
+      "kind": "Walk cycle",
+      "seconds": 6,
+      "poster": "media/after-hours/bunny.jpg",
+      "video": "media/after-hours/bunny.mp4"
+    },
+    {
+      "id": "chick",
+      "name": "Chick",
+      "description": "A small enemy that floods the board in swarms.",
+      "alt": "A round yellow toy chick with orange feet and a wind-up key.",
+      "kind": "Walk cycle",
+      "seconds": 6,
+      "poster": "media/after-hours/chick.jpg",
+      "video": "media/after-hours/chick.mp4"
+    },
+    {
+      "id": "tin-robot",
+      "name": "Tin Robot",
+      "description": "An armoured toy: light shots deal reduced damage.",
+      "alt": "A red tin robot with a square head and silver arms.",
+      "kind": "Walk cycle",
+      "seconds": 6,
+      "poster": "media/after-hours/tin-robot.jpg",
+      "video": "media/after-hours/tin-robot.mp4"
+    },
+    {
+      "id": "army-man",
+      "name": "Army Man",
+      "description": "A green toy soldier who shoots back at the player.",
+      "alt": "A green toy soldier carrying a rifle and wearing a brimmed hat.",
+      "kind": "Walk cycle",
+      "seconds": 6,
+      "poster": "media/after-hours/army-man.jpg",
+      "video": "media/after-hours/army-man.mp4"
+    },
+    {
+      "id": "helicopter",
+      "name": "Helicopter",
+      "description": "A flying enemy that passes over the maze.",
+      "alt": "A purple toy helicopter with a gold wind-up key.",
+      "kind": "Hover cycle",
+      "seconds": 6,
+      "poster": "media/after-hours/helicopter.jpg",
+      "video": "media/after-hours/helicopter.mp4"
+    },
+    {
+      "id": "fireman",
+      "name": "Fireman",
+      "description": "A siege enemy who carries a ladder and climbs over walls.",
+      "alt": "A white-and-orange toy fireman with a ladder on his back.",
+      "kind": "Walk cycle",
+      "seconds": 6,
+      "poster": "media/after-hours/fireman.jpg",
+      "video": "media/after-hours/fireman.mp4"
+    },
+    {
+      "id": "cymbal-monkey",
+      "name": "Cymbal Monkey",
+      "description": "A boss that smashes through everything in its way.",
+      "alt": "A brown toy monkey with a turquoise vest and gold cymbals.",
+      "kind": "Walk cycle",
+      "seconds": 6,
+      "poster": "media/after-hours/cymbal-monkey.jpg",
+      "video": "media/after-hours/cymbal-monkey.mp4"
+    },
+    {
+      "id": "enraged-cymbal-monkey",
+      "name": "Enraged Cymbal Monkey",
+      "description": "An enraged model variant of the Cymbal Monkey.",
+      "alt": "The Cymbal Monkey model holding its cymbals in a different pose.",
+      "kind": "Walk cycle",
+      "seconds": 6,
+      "poster": "media/after-hours/enraged-cymbal-monkey.jpg",
+      "video": "media/after-hours/enraged-cymbal-monkey.mp4"
+    }
+  ],
+  "inline": [
+    {
+      "id": "fireman-plant",
+      "name": "Fireman",
+      "description": "The Fireman places a ladder.",
+      "alt": "A toy Fireman extending an orange-and-white ladder on the wooden board.",
+      "kind": "Ladder placement",
+      "seconds": 15.03,
+      "poster": "media/after-hours/fireman-plant.jpg",
+      "video": "media/after-hours/fireman-plant.mp4"
+    }
+  ]
+};
+
     const AFTER_HOURS_ARTICLE = `<p><em>A first-person tower defense game, built in Unity 6.</em></p>
 <blockquote>
 <p>Someone left a chess game set up on the living-room rug overnight. When the lights go out, the
@@ -328,46 +508,10 @@ pick up the blaster and deal with whatever gets through.</p>
 enemy weighs the long way round against smashing a wall, and heads for the wall worth breaking.
 A good maze has to make the long way worth taking.</p>
 <h4>The two sides</h4>
-<div class="case-table" role="region" aria-label="Comparison table" tabindex="0"><table>
-<thead>
-<tr>
-<th>You: the games cabinet</th>
-<th>Them: the junk drawer</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Turned and carved wood: ivory, maple, boxwood. Calm.</td>
-<td>Saturated toy plastic and painted tin. Loud.</td>
-</tr>
-<tr>
-<td><strong>The Rook</strong>: sustained single-target fire, the backbone of any defense</td>
-<td><strong>Bunnies</strong> that hop fast down the lanes</td>
-</tr>
-<tr>
-<td><strong>The Knight</strong>: a stubby piece that stomps groups of enemies at once</td>
-<td><strong>Chicks</strong> that flood the board in swarms</td>
-</tr>
-<tr>
-<td><strong>The Bishop</strong>: the tallest piece, with long range that cuts through armour</td>
-<td><strong>Tin robots</strong>: armoured, so light shots are reduced</td>
-</tr>
-<tr>
-<td><strong>Walls</strong>: board squares that rise out of the board</td>
-<td><strong>Green army men</strong> who shoot back at you</td>
-</tr>
-<tr>
-<td><strong>The King</strong>: what you&#39;re protecting</td>
-<td><strong>Helicopters</strong> that fly over your maze entirely</td>
-</tr>
-<tr>
-<td></td>
-<td><strong>Firemen</strong> who carry ladders and climb over walls</td>
-</tr>
-<tr>
-<td></td>
-<td><strong>The Cymbal Monkey</strong>, a 6.5 m boss that smashes through everything in its way</td>
-</tr>
-</tbody></table></div>
+<p>Model turntables and movement cycles from the current art pass. These clips show individual assets; their gameplay roles are described below each preview.</p>
+<div data-showcase="defenses"></div>
+<p><strong>Walls:</strong> board squares that rise out of the board.</p>
+<div data-showcase="enemies"></div>
 <p>Every enemy has a wind-up key on its back. When one is defeated, the key stops and the toy topples
 over. The tone is playful and frantic, never gritty: no blood, just a living room at toy scale
 with furniture towering overhead.</p>
@@ -412,7 +556,8 @@ softlock guard stops you sealing the King off completely, and separate fields ha
 enemies and flyers.</li>
 <li><strong>Walls that can be broken.</strong> Walls count as passable at a cost, so enemies decide whether
 breaking one beats walking round. Firemen plant ladders to climb over walls instead of breaking
-them.</li>
+them.
+<div data-inline-showcase="fireman-plant" data-caption="Fireman · ladder-placement animation"></div></li>
 <li><strong>Combat.</strong> Enemy health and armour, damage numbers, kill effects, and a player blaster with a
 magazine and reloads. Defense line of sight runs from each piece&#39;s head, so a piece&#39;s height
 decides what it can shoot over.</li>
@@ -740,11 +885,105 @@ against a 50% target</li>
     }
     function resetPanel(titleText, projectWindow = false) {
       title.textContent = titleText;
+      body.querySelectorAll('video').forEach(video => video.pause());
+      if (showcaseVisibility) showcaseVisibility.disconnect();
       body.replaceChildren();
       dialog.classList.remove('research-window');
       dialog.classList.toggle('project-window',projectWindow);
       dialog.scrollTop = 0;
     }
+
+    function getShowcaseAsset(id) {
+      return Object.values(AFTER_HOURS_MEDIA).flat().find(asset => asset.id === id);
+    }
+    function showcaseVideo(asset) {
+      const video = element('video','');
+      video.controls = true; video.preload = 'none'; video.playsInline = true;
+      video.muted = true; video.loop = true;
+      video.poster = asset.poster; video.src = asset.video;
+      video.setAttribute('aria-label',asset.name + ' model preview: ' + asset.kind.toLowerCase());
+      video.dataset.showcaseVideo = 'true';
+      return video;
+    }
+    function renderShowcase(group) {
+      const assets = AFTER_HOURS_MEDIA[group];
+      const section = element('section','showcase');
+      section.dataset.showcaseGroup = group;
+      const heading = element('h5','',group === 'defenses' ? 'Your pieces: the games cabinet' : 'The enemies: the junk drawer');
+      heading.id = 'showcase-' + group; heading.tabIndex = -1;
+      section.setAttribute('aria-labelledby',heading.id);
+      section.append(heading,element('p','showcase-note',group === 'defenses' ? 'Turned and carved wood: ivory, maple, boxwood. Choose a piece, then press play to rotate the model.' : 'Saturated toy plastic and painted tin. Choose a toy, then press play to see its movement.'));
+      const figure = element('figure','showcase-player');
+      const video = showcaseVideo(assets[0]);
+      const caption = element('figcaption','showcase-caption');
+      const name = element('h6','',assets[0].name);
+      const description = element('p','',assets[0].description);
+      const meta = element('p','showcase-meta','');
+      caption.append(name,description,meta); figure.append(video,caption);
+      const options = element('div','showcase-options');
+      options.setAttribute('role','group'); options.setAttribute('aria-label','Choose ' + (group === 'defenses' ? 'a chess piece' : 'an enemy'));
+      function select(asset) {
+        video.pause(); video.poster = asset.poster; video.src = asset.video;
+        video.setAttribute('aria-label',asset.name + ' model preview: ' + asset.kind.toLowerCase());
+        name.textContent = asset.name; description.textContent = asset.description;
+        meta.textContent = 'Model showcase · ' + asset.kind + ' · ' + asset.seconds + 's silent loop';
+        options.querySelectorAll('button').forEach(button => button.setAttribute('aria-pressed',String(button.dataset.asset === asset.id)));
+        video.load();
+        const bounds = video.getBoundingClientRect();
+        const panel = dialog.getBoundingClientRect();
+        if (bounds.top < panel.top + 110 || bounds.bottom > panel.bottom - 20) video.scrollIntoView({block:'center'});
+        video.focus({preventScroll:true});
+      }
+      assets.forEach(asset => {
+        const button = element('button','showcase-option','');
+        button.type = 'button'; button.dataset.asset = asset.id;
+        button.setAttribute('aria-pressed',String(asset === assets[0]));
+        const image = element('img',''); image.src = asset.poster; image.alt = '';
+        image.width = 1280; image.height = 720; image.loading = 'lazy'; image.decoding = 'async';
+        button.append(image,element('span','',asset.name));
+        button.addEventListener('click',()=>select(asset));
+        options.append(button);
+      });
+      meta.textContent = 'Model showcase · ' + assets[0].kind + ' · ' + assets[0].seconds + 's silent loop';
+      section.append(figure,options);
+      return section;
+    }
+    function renderInlineShowcase(id,captionText) {
+      const asset = getShowcaseAsset(id);
+      const figure = element('figure','inline-showcase');
+      figure.append(showcaseVideo(asset),element('figcaption','',captionText));
+      return figure;
+    }
+    let showcaseVisibility;
+    function installShowcase(story) {
+      if (showcaseVisibility) showcaseVisibility.disconnect();
+      story.querySelectorAll('[data-showcase]').forEach(mount => mount.replaceWith(renderShowcase(mount.dataset.showcase)));
+      story.querySelectorAll('[data-inline-showcase]').forEach(mount => mount.replaceWith(renderInlineShowcase(mount.dataset.inlineShowcase,mount.dataset.caption)));
+      showcaseVisibility = new IntersectionObserver(entries => entries.forEach(({target,isIntersecting}) => { if (!isIntersecting) target.pause(); }),{root:dialog});
+      story.querySelectorAll('video').forEach(video => {
+        video.addEventListener('play',()=>story.querySelectorAll('video').forEach(other => { if (other !== video) other.pause(); }));
+        showcaseVisibility.observe(video);
+      });
+    }
+    function renderFeaturedShowcase(project) {
+      const preview = element('div','featured-media');
+      [['rook','Meet the defenders','defenses'],['bunny','Meet the wind-up toys','enemies']].forEach(([id,label,group]) => {
+        const asset = getShowcaseAsset(id);
+        const button = element('button','',''); button.type = 'button';
+        button.setAttribute('aria-label',label + ' in After Hours');
+        const image = element('img',''); image.src = asset.poster; image.alt = asset.alt;
+        image.width = 1280; image.height = 720; image.loading = 'lazy'; image.decoding = 'async';
+        button.append(image,element('span','',label));
+        button.addEventListener('click',()=>{
+          renderProject(project);
+          const heading = document.getElementById('showcase-' + group);
+          heading.scrollIntoView({block:'start'}); heading.focus({preventScroll:true});
+        });
+        preview.append(button);
+      });
+      return preview;
+    }
+
     function renderProjects(focusId) {
       resetPanel('Selected work', true);
       body.append(element('p','eyebrow','Analytics-Driven Game Design'), element('p','intro','I build game tools and simulations, and use data to understand players and improve game decisions.'));
@@ -789,6 +1028,7 @@ against a 50% target</li>
           projectTitle.id = 'title-' + project.id;
           card.append(heading,element('p','project-context',project.context),projectTitle);
           if (project.pitch) card.append(element('p','featured-pitch',project.pitch));
+          if (project.id === 'after-hours') card.append(renderFeaturedShowcase(project));
           card.append(element('p','project-description',project.description));
           if (project.metrics) {
             const stats = element('dl','featured-stats');
@@ -807,6 +1047,13 @@ against a 50% target</li>
           button.setAttribute('aria-label',project.featured ? 'Explore After Hours' : 'Read project: ' + project.title);
           button.addEventListener('click', () => { renderProject(project); close.focus(); });
           card.append(button);
+          if (project.id === 'after-hours') {
+            const copy = element('div','featured-copy');
+            ['.project-context','h3','.featured-pitch','.project-description','.tags','.project-action'].forEach(selector => copy.append(card.querySelector(selector)));
+            const layout = element('div','featured-showcase-layout');
+            layout.append(copy,card.querySelector('.featured-media'));
+            card.insertBefore(layout,card.querySelector('.featured-stats'));
+          }
           grid.append(card);
         });
         panel.append(grid);
@@ -831,6 +1078,7 @@ against a 50% target</li>
         const story = element('article','project-story');
         story.setAttribute('aria-label','After Hours case study');
         story.innerHTML = AFTER_HOURS_ARTICLE;
+        installShowcase(story);
         const contents = element('details','case-toc');
         contents.append(element('summary','','Explore the case study'));
         const navigation = element('nav','');
@@ -1012,7 +1260,8 @@ against a 50% target</li>
       else if (type === 'resume' || type === 'recommendation') renderDocument(type);
       else renderProfile(type);
       if (!dialog.open) dialog.showModal();
-      close.focus();
+      close.focus({preventScroll:true});
+      dialog.scrollTop = 0;
     }
     document.querySelectorAll('[data-open]').forEach(button => button.addEventListener('click', () => openPanel(button.dataset.open)));
     close.addEventListener('click', () => dialog.close());
@@ -1024,6 +1273,7 @@ against a 50% target</li>
       button.querySelector('span').textContent = enabled ? 'Hide labels' : 'Show labels';
       room.classList.toggle('show-labels', enabled);
     });
+    dialog.addEventListener('close',()=>{ body.querySelectorAll('video').forEach(video => video.pause()); if (showcaseVisibility) showcaseVisibility.disconnect(); });
     if (PORTFOLIO.name) { document.getElementById('owner-name').textContent = PORTFOLIO.name; document.title = PORTFOLIO.name + ' · Analytics-Driven Game Design'; }
   </script>
 </body>
